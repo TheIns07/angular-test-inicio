@@ -12,7 +12,7 @@ import { NgOptimizedImage } from '@angular/common';
     ProductComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     NgOptimizedImage
