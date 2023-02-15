@@ -1,3 +1,12 @@
-<p>{{product.title}}</p>
-<p> $ {{product.price}}</p>
-<img [src] = "product.images[0]" alt = "">
+<ng-container *ngIf="product">
+    <h1>{{product.title}}</h1>
+    <h2> $ {{product.price}}</h2>
+    <img [ngSrc] = "product.images[0]" width="640" height="480">
+</ng-container>
+
+<ng-container *ngIf="!product">
+    <p>Sin datos</p>
+</ng-container>
+
+
+
