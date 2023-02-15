@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Product } from './models/Product.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +7,8 @@ import { Product } from './models/Product.model';
 })
 export class AppComponent {
   title = 'angular-test';
-  http = inject(HttpClient);
-  products: Product[] = []
 
   changeTitle(){
     this.title = "Arturo";
-  }
-
-  ngOnInit(){
-    this.http.get<Product[]>
-    ('https://api.escuelajs.co/api/v1/products')
-    .subscribe((data: any) => {
-      this.products = data;
-    })
   }
 }
